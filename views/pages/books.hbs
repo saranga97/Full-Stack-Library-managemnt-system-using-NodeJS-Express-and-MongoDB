@@ -1,0 +1,119 @@
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  font-family: arial;
+  background-color: aliceblue;
+  height: fit-content;
+}
+
+.card:hover{
+    transform: scale(110%);
+    transition-duration: 0.5s;
+    z-index: 1;
+    z-index: auto;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #7fcc03;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  margin-bottom: 0px;
+  float: bottom;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+  float: bottom;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+
+<form class="example" action="action_page.php">
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<div class="row">
+    <h1 style="text-align: center;color:azure;text-transform:uppercase;font-size: 36px;font-family:"Lucida Grande", Helvetica, Arial, sans-serif">Find Book</h1>
+    {{#each books}}
+    <div class="col col-sm-3">
+        <form method="post" action="/book/purchase/{{this._id}}">
+            <div class="card">
+            <img src={{this.cover_image}} style="margin-top: 20px;" alt="Book Image not available" width="200" height="300">
+            <h1>{{this.book_name}}</h1>
+            <p class="title">{{this.book_name}}</p>
+            <p>{{this.author_name}}</p>
+            <p><button type="submit"> Borrow </button></p>
+            </div>
+
+            {{!-- <div class="book-body">
+                <p>{{this.book_name}}</p>
+                <img src={{this.cover_image}} width="220" height="300"> <br>
+                Author: {{this.author_name}}
+            </div>
+            <div class="book-footer">
+                <button type="submit" class="btn btn-info">Purchase</button>
+            </div> --}}
+        </form>
+    </div>
+    {{/each}}
+</div>
+

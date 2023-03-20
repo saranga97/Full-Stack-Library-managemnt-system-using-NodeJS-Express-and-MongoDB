@@ -1,0 +1,111 @@
+<style>
+* {
+  box-sizing: border-box;
+}
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 300px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  align-self: center;
+  margin-top: 40px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
+<form class="example" action="action_page.php">
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+{{!-- <div class="searchBox">
+<form action="/search?">
+   <input class="searchInput" type="search" name="q" placeholder="Search">
+   <button class="searchButton" type="submit">
+   <i class="material-icons">
+   search
+   </i>
+   </button>
+</form>
+</div> --}}
+
+<div class="container" style="margin-top:100px;">
+  
+  <div class="profile-book-section">
+    <h1 style="text-align: center;color:azure;text-transform:uppercase;font-size: 36px;font-family:"Lucida Grande", Helvetica, Arial, sans-serif;margin-bottom:20px;>Your Borrowed Books</h1>
+    <ul class="list-group">
+      {{#each books}}
+      <li class="list-group-item"><p style="font-weight:bold">{{this.bookId.book_name}}</p> --- 
+        purchase date: {{this.purchaseDate}} -- 
+        <a href="/book/return/{{this.bookId._id}}" class="btn btn-info">Return</a></li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+<form action="/book" method="get" >
+<button class="button"><span> Find Books </span></button>
+</form>

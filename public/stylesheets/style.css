@@ -1,0 +1,66 @@
+*{
+  padding: 0%;
+  margin: 0%;
+}
+
+
+body {
+  padding: 0px;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(/images/new.jpg);
+  background-repeat: no-repeat;
+  /* background-color: white; */
+  
+}
+
+a {
+  color: #00B7FF;
+}
+
+/* .book-item {
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  margin: 5px 5px 5px 5px;
+  background-color: whitesmoke;
+  height: 500px;
+  width: 300px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+
+} */
+
+/* .book-item:hover{
+  background-color: black;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);
+  color: aliceblue;
+}
+.book-body.p {
+  font-weight: bold;
+  font-size:large;
+  line-height:2.5em;
+} */
+
+.signup{
+  background-color: #f2f2f2;
+  height: auto;
+  padding: 20px;
+  border-radius: 5px;
+  align-items: center;
+  margin-top: 80px;
+  box-shadow: 0 1px 2px 0 rgba(228, 226, 226, 0.2), 0 1px 10px 0 rgba(163, 160, 160, 0.579);
+}
+.signup:h1{
+  text-align: center;
+  align-items: center;
+}
+
+.add-book{
+  background-color: #feffac;
+  height: auto;
+  padding: 20px;
+  border-radius: 5px;
+  align-items: center;
+  margin-top: 80px;
+  box-shadow: 0 1px 2px 0 rgba(228, 226, 226, 0.2), 0 10px 10px 0 rgba(163, 160, 160, 0.579);
+}

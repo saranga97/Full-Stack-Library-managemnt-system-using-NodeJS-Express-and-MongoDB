@@ -1,0 +1,58 @@
+<style> 
+input[type=text] ,[type=email],[type=password]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  
+}
+
+button[type=submit] {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button[type=submit]:hover {
+  background-color: #45a049;
+}
+
+</style>
+
+<div class="add-book">
+<div>
+    <form action="/book/add-book" method="post">
+    <h1 style="text-align: center;text-transform:uppercase;font-weight:bold;margin-bottom:30px;text-shadow:black">Add new book</h1>
+        <div class="form-group">
+            <label for="book_name">Book Name:</label>
+            <input type="text" name="book_name" id="book_name">
+        </div>
+        <div class="form-group">
+            <label for="cover_image">Cover Image</label>
+            <input type="text" name="cover_image" id="cover_image">
+        </div>
+        <div class="form-group">
+            <label for="author_name">Author Name:</label>
+            <input type="text"  name="author_name"  id="author_name">
+        </div>
+        <div class="form-group">
+            <label for="isbn">ISBN:</label>
+            <input type="text" name="isbn"  id="isbn">
+        </div>
+        <div class="form-group">
+            <label for="genres">Genres:</label>
+            <input type="text" name="genres"  id="genres">
+        </div>
+        <div class="form-group">
+            <label for="publisher">Publisher:</label>
+            <input type="text" name="publisher" id="publisher">
+        </div>
+        <button type="submit" >Add Book</button>
+    </form>
+</div>
+
+</div>
